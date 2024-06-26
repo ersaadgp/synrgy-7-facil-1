@@ -1,0 +1,74 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "News Application",
+    "version": "1.0.0",
+    "description": "lorem ipsum dolor sit amet"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000"
+    }
+  ],
+  "paths": {
+    "/articles/{id}": {
+      "get": {
+        "summary": "Retrieve a list of articles",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "When API Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "types": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Success"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "com1"
+                          },
+                          "title": {
+                            "type": "string",
+                            "example": "Title One"
+                          },
+                          "content": {
+                            "type": "string",
+                            "example": "Lorem ipsum"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

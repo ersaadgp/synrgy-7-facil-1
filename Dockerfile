@@ -12,7 +12,11 @@ RUN npm install
 COPY . .
 
 # Ekspos port aplikasi
-EXPOSE 3000
+EXPOSE 8000
 
-# Jalankan aplikasi
-CMD ["node", "app.js"]
+
+# Make the script executable
+RUN chmod +x ./start.sh
+
+# Use the custom start script
+CMD ["./start.sh"]

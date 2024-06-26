@@ -6,11 +6,11 @@ const config: { [key: string]: Knex.Config } = {
   development: {
     client: 'pg',
     connection: {
-      user: 'postgres',
-      password: 'admin',
-      port: 5433,
-      host: '127.0.0.1',
-      database: 'CH_5_ORM',
+      user: 'postgres.ngxxbyglkmjfqzuromvm',
+      password: '17Agustus1945',
+      port: 6543,
+      host: 'aws-0-ap-southeast-1.pooler.supabase.com',
+      database: 'postgres',
     },
   },
 }

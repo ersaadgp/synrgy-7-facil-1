@@ -29,7 +29,7 @@ Model.knex(knexInstance)
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 app.get('/', (_, res: Response) => {
-  res.send('Express + TypeScript Server Deployed')
+  res.send('Updated 19.30')
 })
 
 app.get('/articles', async (_, res: Response) => {

@@ -14,9 +14,5 @@ COPY . .
 # Ekspos port aplikasi
 EXPOSE 8000
 
-
-# Make the script executable
-RUN chmod +x ./start.sh
-
-# Use the custom start script
-CMD ["./start.sh"]
+# Jalankan aplikasi
+CMD ["node", "app.js"]

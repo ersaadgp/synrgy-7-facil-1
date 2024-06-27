@@ -3,11 +3,15 @@ import knex from 'knex'
 import { Model } from 'objection'
 import { ArticlesModel } from './model/article.model'
 import { CommentsModel } from './model/comment.model'
+import dotenv from 'dotenv'
 import swaggerUi from 'swagger-ui-express'
 import * as swaggerDocument from './swaggerConfig.json'
 
+dotenv.config()
+
 const app: Express = express()
 const port = 8000
+const DB_PORT = process.env.DB_PORT || '5432'
 
 const knexInstance = knex({
   client: 'pg',
@@ -25,7 +29,7 @@ Model.knex(knexInstance)
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 app.get('/', (_, res: Response) => {
-  res.send('Express + TypeScript Server')
+  res.send('Express + TypeScript Server Deployed')
 })
 
 app.get('/articles', async (_, res: Response) => {
